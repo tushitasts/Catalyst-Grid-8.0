@@ -1,0 +1,40 @@
+# Adversarial Probe Set — Coverage Plan
+
+**Target: 63 hand-authored cases minimum** (within brief's 50-100 range; actual count 76 after adding deceptive-image coverage). Every case maps to a specific rule, policy clause, or scenario already defined in `ai_decision_guidelines.md` and the policy corpus — nothing invented fresh.
+
+Field names throughout match the confirmed schema from `gen_returns.py` / `model_pipeline.py`:
+`account_age_days, discount_pct, order_value_ratio, seller_return_rate, seller_age_days, seller_customer_frequency, days_since_last_return, order_value, user_avg_order_value, review_count, days_since_delivered, return_to_order_ratio, seller_rating, price, total_orders_at_time, days_left_to_return, image_uploaded, shared_device_flag, category_base_defect, reason_category, total_returns_at_time, phone_verified, category, return_frequency_score, seller_repeat_ratio, weekend_return_ratio, is_prepaid, high_value_return_ratio, returns_last_90d, same_category_return_ratio, return_type, email_verified, returns_last_30d, within_return_window, is_non_returnable, fraud_type, label`
+
+Note: `order_value_ratio` (not `order_value_percentile`) — renamed to match the actual field name after Rushil's fix in `model_pipeline.py`.
+
+## Distribution (76 cases total)
+
+| Bucket | Target count | Maps to |
+|---|---|---|
+| R1 — Contradictory delivery claim | 5 | Section 6a R1 |
+| R2 — Attribute mismatch (colour/size/model) | 5 | Section 6a R2 |
+| R3 — Multiple high-value items, same customer | 5 | Section 6a R3 |
+| R4 — Sudden behavior change | 5 | Section 6a R4 |
+| R5 — Return window manipulation (timing) | 4 | Section 6a R5 |
+| R6 — New account + high-value return | 4 | Section 6a R6 |
+| R7 — High seller fraud rate | 4 | Section 6a R7 |
+| R8 — Shared device across accounts | 4 | Section 6a R8 |
+| R9 — Discount-driven Wardrobing | 5 | Section 6a R9 |
+| Trusted Customer Override (6b) — should Auto-Approve despite minor flag | 5 | Section 6b |
+| Trusted Override should NOT apply (boundary-testing the override's exclusions) | 4 | Section 6b exclusions |
+| Policy-boundary escalation (window expired by 1 day) | 4 | Section 6c |
+| Item Swap — identity/serial mismatch | 3 | Policy corpus doc 01 |
+| **Deceptive images — undamaged item photographed from misleading angle** | **3** | **Evidence Consistency policy doc — distinct from R2, tests inconclusive-vs-contradictory image evidence** |
+| Non-returnable category edge case | 3 | Policy corpus doc 13 |
+| Sarcasm / tone edge case (brief's named example) | 3 | Text Reasoning Agent stress test |
+| Clean legitimate control cases (should Auto-Approve, no tricks) | 5 | Sanity baseline — confirms the system doesn't over-trigger |
+| Clean fraud control cases (should Auto-Reject, unambiguous) | 5 | Sanity baseline — confirms the system doesn't over-escalate |
+
+**Total: 76**
+
+## Design principles applied to every case
+
+1. **Ground truth is explicit per case** — `expected_verdict` (Auto-Approve / Auto-Reject / Escalate) plus `expected_reasoning_tag` (which rule/policy should be cited).
+2. **No case is designed to trick the system into the wrong answer for its own sake** — each one tests whether a *specific, named* rule fires correctly, matching how the brief's own adversarial examples work ("old trusted account suddenly claiming empty box," "sarcastic reason," etc.).
+3. **Corroboration-sensitivity is deliberately tested** — several cases include a soft signal (R5, R6, R7, R9) *alone*, with expected verdict staying at Escalate/Increase-Risk rather than Auto-Reject, specifically to catch a system that over-triggers on a single weak signal (this is the brief's False-Positive Trap, operationalized as a testable case).
+4. **Trusted Override boundary cases are adversarial on purpose** — testing exactly where the override's four exclusion conditions (hard signal present / sudden spike / value ≥ ₹10k / risk ≥ 0.30) should block it, since a naive implementation might apply the override too broadly.
