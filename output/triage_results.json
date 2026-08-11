@@ -1,0 +1,3030 @@
+[
+  {
+    "return_id": "RET_0003341",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.028 (LightGBM: 0.047, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.056)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.593)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.384)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.140)\n  \u2022 account_age_days: 342.000 -> increases fraud risk (SHAP: +0.133)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 04_warranty_vs_return_separation.md: ## Principle\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing",
+    "llm_called": false,
+    "combined_score": 0.02809564024473826,
+    "lgbm_fraud_prob": 0.046826067074563764,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0561290702475532,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5926768268915583,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.38419410313977104,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.13998460585815795,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 342.0,
+        "shap_value": 0.13317217348580548,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      }
+    ],
+    "elapsed_seconds": 2.75
+  },
+  {
+    "return_id": "RET_0005743",
+    "ground_truth": "fraud",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.371 (LightGBM: 0.618, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.370607042332373,
+    "lgbm_fraud_prob": 0.6176784038872883,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.9308593775067818,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.344902688098279,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 4.0,
+        "shap_value": 0.27501233839491784,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 887.0,
+        "shap_value": -0.2243983702861349,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 0.5990281701087952,
+        "shap_value": -0.1246199871245168,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0002677",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.053 (LightGBM: 0.089, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.019)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.448)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.362)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.236)\n  \u2022 account_age_days: 372.000 -> increases fraud risk (SHAP: +0.164)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.053199065474069114,
+    "lgbm_fraud_prob": 0.08866510912344852,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0194489319574882,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.4475999173118113,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.36209661771873736,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.23644598807389508,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 372.0,
+        "shap_value": 0.16377682923550008,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.09
+  },
+  {
+    "return_id": "RET_0007174",
+    "ground_truth": "legitimate",
+    "fraud_type": "seller_buyer_collusion",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.296 (LightGBM: 0.494, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.2963129917243535,
+    "lgbm_fraud_prob": 0.4938549862072559,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5174346820505867,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.3333333432674408,
+        "shap_value": 0.4043711091754476,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 2.78194522857666,
+        "shap_value": 0.27516308905173525,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.2232052123878483,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 1.0,
+        "shap_value": 0.17134430229828207,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "16_part3_general_rules.md",
+        "section": "## Open Box Delivery"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0001664",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.141 (LightGBM: 0.235, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.395)\n  \u2022 return_to_order_ratio: 0.333 -> increases fraud risk (SHAP: +0.355)\n  \u2022 total_returns_at_time: 2.000 -> increases fraud risk (SHAP: +0.248)\n  \u2022 order_value_ratio: 0.025 -> decreases fraud risk (SHAP: -0.147)\n  \u2022 reason_category: 2.000 -> decreases fraud risk (SHAP: -0.109)\n\n--- Relevant Policies ---\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing",
+    "llm_called": false,
+    "combined_score": 0.1408725136758169,
+    "lgbm_fraud_prob": 0.23478752279302817,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.39529448893768365,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.3333333432674408,
+        "shap_value": 0.355164084888027,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.24793334185443527,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 0.025426769629120827,
+        "shap_value": -0.14713248124183026,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 2.0,
+        "shap_value": -0.10865740558028428,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0003611",
+    "ground_truth": "legitimate",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.081 (LightGBM: 0.136, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.059)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.411)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.397)\n  \u2022 account_age_days: 222.000 -> increases fraud risk (SHAP: +0.347)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.289)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.08134211665749484,
+    "lgbm_fraud_prob": 0.13557019442915808,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0590157423976891,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.4105422982878463,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3972582618873453,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 222.0,
+        "shap_value": 0.3472932233879544,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.28909580168525445,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0007213",
+    "ground_truth": "legitimate",
+    "fraud_type": "serial_returner",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.026 (LightGBM: 0.044, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.148)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.499)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.454)\n  \u2022 account_age_days: 261.000 -> increases fraud risk (SHAP: +0.232)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.199)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.026180153565397345,
+    "lgbm_fraud_prob": 0.04363358927566224,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.14763179124031,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.4991727312075361,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.4541756216419757,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 261.0,
+        "shap_value": 0.23164724532731493,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.19888679671543405,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0005203",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.074 (LightGBM: 0.123, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.966)\n  \u2022 account_age_days: 130.000 -> increases fraud risk (SHAP: +0.709)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.364)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.354)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.156)\n\n--- Relevant Policies ---\n  \u2022 06_category_books_sports_auto.md: # Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto A\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.07396416200890996,
+    "lgbm_fraud_prob": 0.12327360334818326,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9662600507650193,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 130.0,
+        "shap_value": 0.7085537909015108,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3642070496634826,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.3535972559276191,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.15598311242389434,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.09
+  },
+  {
+    "return_id": "RET_0002970",
+    "ground_truth": "legitimate",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.283 (LightGBM: 0.472, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.2829957656579012,
+    "lgbm_fraud_prob": 0.4716596094298353,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5443577583209244,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 219.0,
+        "shap_value": 0.4764037798496034,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 9.117859840393066,
+        "shap_value": 0.4425066443318853,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.3333333432674408,
+        "shap_value": 0.44103382522858586,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.19217385274957074,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0007978",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.517 (LightGBM: 0.862, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.517458731495661,
+    "lgbm_fraud_prob": 0.862431219159435,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6000000238418579,
+        "shap_value": 0.8649596584195168,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "shared_device_flag",
+        "value": 1.0,
+        "shap_value": 0.39283863751124765,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3879812181161526,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 3.0,
+        "shap_value": 0.37250942762633915,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.20664517322492923,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "10_category_large_appliances_10day.md",
+        "section": "# Returns Policy \u2014 Large Appliances (Non-Flagship) & Select Small Appliances"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0005860",
+    "ground_truth": "fraud",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.187 (LightGBM: 0.171, Rules: 0.211)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.009)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.389)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.370)\n  \u2022 account_age_days: 101.000 -> increases fraud risk (SHAP: +0.327)\n  \u2022 days_since_delivered: 0.000 -> increases fraud risk (SHAP: +0.312)\n\n--- Triggered Rules ---\n  \u2022 [R1] New Account + High Value Purchase: Account is 101d old (< 120d) and order value \u20b914,228 exceeds \u20b910,000 threshold.\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action\n  \u2022 16_part3_general_rules.md: ## Open Box Delivery",
+    "llm_called": false,
+    "combined_score": 0.1869186668746839,
+    "lgbm_fraud_prob": 0.171180234264824,
+    "rule_score": 0.21052631578947367,
+    "rules_triggered": [
+      {
+        "rule_id": "R1",
+        "rule_name": "New Account + High Value Purchase",
+        "description": "Account is 101d old (< 120d) and order value \u20b914,228 exceeds \u20b910,000 threshold.",
+        "score": 12.0
+      }
+    ],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0085706499308529,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3892977553802325,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.3698184684816443,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 101.0,
+        "shap_value": 0.3273361082137027,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 0.0,
+        "shap_value": 0.31204369205977567,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "16_part3_general_rules.md",
+        "section": "## Open Box Delivery"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0004609",
+    "ground_truth": "legitimate",
+    "fraud_type": "empty_box",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.543 (LightGBM: 0.906, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.54347439424923,
+    "lgbm_fraud_prob": 0.9057906570820501,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 1.0733401083502465,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 12.843855857849121,
+        "shap_value": 0.6265505723891505,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3724924641045858,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.2796992822474942,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "requires_manual_verification",
+        "value": 1.0,
+        "shap_value": 0.11550496420856984,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "10_category_large_appliances_10day.md",
+        "section": "# Returns Policy \u2014 Large Appliances (Non-Flagship) & Select Small Appliances"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0002255",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.022 (LightGBM: 0.036, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.018)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.584)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.409)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.134)\n  \u2022 order_value_ratio: nan -> decreases fraud risk (SHAP: -0.066)\n\n--- Relevant Policies ---\n  \u2022 06_category_books_sports_auto.md: # Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto A\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.021783312006855446,
+    "lgbm_fraud_prob": 0.03630552001142574,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0184134863252137,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5838288592986062,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.4088376129371695,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.13372437680779234,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": NaN,
+        "shap_value": -0.06582820284377947,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0001963",
+    "ground_truth": "legitimate",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.051 (LightGBM: 0.084, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.925)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.487)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.399)\n  \u2022 account_age_days: 288.000 -> increases fraud risk (SHAP: +0.240)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.141)\n\n--- Relevant Policies ---\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.050601004994645184,
+    "lgbm_fraud_prob": 0.08433500832440864,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9245340983321486,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.48708821428874327,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3992908020755668,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 288.0,
+        "shap_value": 0.24031647717352778,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.14076383120079475,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0000284",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.464 (LightGBM: 0.773, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.46368939906124296,
+    "lgbm_fraud_prob": 0.7728156651020717,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.75,
+        "shap_value": 0.8956065026898614,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 172.0,
+        "shap_value": 0.5498299201684538,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.28029599473080485,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 3.0,
+        "shap_value": 0.2719769000857046,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.17516162711199007,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "# Returns Policy \u2014 Flagship Mobile, Electronics & Appliance Brands (Service Cent"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0002130",
+    "ground_truth": "legitimate",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.117 (LightGBM: 0.196, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.877)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.443)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.378)\n  \u2022 account_age_days: 283.000 -> increases fraud risk (SHAP: +0.248)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.242)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.11743845040768691,
+    "lgbm_fraud_prob": 0.1957307506794782,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.8765407199133642,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.4431626996164112,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3784572855870556,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 283.0,
+        "shap_value": 0.24807337247294162,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.24161063772277763,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0009202",
+    "ground_truth": "fraud",
+    "fraud_type": "empty_box",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.441 (LightGBM: 0.734, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.44057628074234784,
+    "lgbm_fraud_prob": 0.7342938012372464,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6666666865348816,
+        "shap_value": 0.7602818955761073,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 201.0,
+        "shap_value": 0.5152586170180777,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.29832216622808444,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.27619562448569207,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "discount_pct",
+        "value": 1.600000023841858,
+        "shap_value": -0.1279790053863872,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "10_category_large_appliances_10day.md",
+        "section": "# Returns Policy \u2014 Large Appliances (Non-Flagship) & Select Small Appliances"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0005795",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.289 (LightGBM: 0.482, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.2889858309116202,
+    "lgbm_fraud_prob": 0.48164305151936704,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.477940587998462,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.4000000059604645,
+        "shap_value": 0.4688454330246897,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.29236910230281177,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.22879989284414684,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 28.0,
+        "shap_value": 0.12504555723186792,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0000521",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.246 (LightGBM: 0.411, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.2463193811310353,
+    "lgbm_fraud_prob": 0.41053230188505885,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "account_age_days",
+        "value": 166.0,
+        "shap_value": 0.6018493505611193,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.41007316540780187,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.4000000059604645,
+        "shap_value": 0.36418683741756575,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.18042712933098914,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 3.0,
+        "shap_value": -0.1123975744320566,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0003098",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.123 (LightGBM: 0.205, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.167 -> decreases fraud risk (SHAP: -0.779)\n  \u2022 account_age_days: 118.000 -> increases fraud risk (SHAP: +0.618)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.518)\n  \u2022 total_returns_at_time: 1.000 -> increases fraud risk (SHAP: +0.214)\n  \u2022 discount_pct: 3.100 -> increases fraud risk (SHAP: +0.130)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing",
+    "llm_called": false,
+    "combined_score": 0.12305663210918537,
+    "lgbm_fraud_prob": 0.20509438684864228,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.1666666716337204,
+        "shap_value": -0.779162710804111,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 118.0,
+        "shap_value": 0.6176780164439707,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5175272359915257,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.21421020808834126,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "discount_pct",
+        "value": 3.0999999046325684,
+        "shap_value": 0.13026301879712363,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0004855",
+    "ground_truth": "fraud",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.406 (LightGBM: 0.677, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.4064318039675482,
+    "lgbm_fraud_prob": 0.6773863399459137,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.6674821875458323,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.37513934992818365,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 4.0,
+        "shap_value": 0.31465864690240614,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.20205164114552393,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "category_base_defect",
+        "value": 0.05999999865889549,
+        "shap_value": 0.10791047251579036,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "10_category_large_appliances_10day.md",
+        "section": "# Returns Policy \u2014 Large Appliances (Non-Flagship) & Select Small Appliances"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0003686",
+    "ground_truth": "fraud",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.088 (LightGBM: 0.147, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.984)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.458)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.397)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.244)\n  \u2022 account_age_days: 265.000 -> increases fraud risk (SHAP: +0.211)\n\n--- Relevant Policies ---\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 04_warranty_vs_return_separation.md: ## Principle",
+    "llm_called": false,
+    "combined_score": 0.088072054232113,
+    "lgbm_fraud_prob": 0.14678675705352168,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9839373295051963,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.45771097713831693,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.39742420909639614,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.24352865131585388,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 265.0,
+        "shap_value": 0.21112866895753507,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0003641",
+    "ground_truth": "legitimate",
+    "fraud_type": "changed_mind",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.080 (LightGBM: 0.134, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.062)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.506)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.407)\n  \u2022 shared_device_flag: 1.000 -> increases fraud risk (SHAP: +0.390)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.201)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows",
+    "llm_called": false,
+    "combined_score": 0.08034830025526302,
+    "lgbm_fraud_prob": 0.1339138337587717,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.061759985738254,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.5063362873149891,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.40727667409789686,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "shared_device_flag",
+        "value": 1.0,
+        "shap_value": 0.3901516064914576,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.2014718541783127,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0004289",
+    "ground_truth": "legitimate",
+    "fraud_type": "seller_buyer_collusion",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.031 (LightGBM: 0.052, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.991)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.477)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.396)\n  \u2022 account_age_days: 218.000 -> increases fraud risk (SHAP: +0.274)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.146)\n\n--- Relevant Policies ---\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.03144558157392858,
+    "lgbm_fraud_prob": 0.0524093026232143,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9905281970738375,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.477086663579753,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.39634596928757715,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 218.0,
+        "shap_value": 0.27403730399047854,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.1459101858287598,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0008231",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.060 (LightGBM: 0.101, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.964)\n  \u2022 account_age_days: 159.000 -> increases fraud risk (SHAP: +0.596)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.371)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.332)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.170)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows",
+    "llm_called": false,
+    "combined_score": 0.06048261712578544,
+    "lgbm_fraud_prob": 0.10080436187630908,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9643575591142721,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 159.0,
+        "shap_value": 0.596430569127763,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.37127998134102425,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.3316163235633161,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.17010107096437804,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0007080",
+    "ground_truth": "fraud",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.561 (LightGBM: 0.935, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.5608845428664533,
+    "lgbm_fraud_prob": 0.9348075714440888,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.75,
+        "shap_value": 1.1028184653082895,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 192.0,
+        "shap_value": 0.4530417015715244,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 2.5904171466827393,
+        "shap_value": 0.45157158101273137,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 3.0,
+        "shap_value": 0.36832123591244165,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3077726681036463,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.14
+  },
+  {
+    "return_id": "RET_0000285",
+    "ground_truth": "legitimate",
+    "fraud_type": "item_swap",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.046 (LightGBM: 0.077, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.897)\n  \u2022 account_age_days: 174.000 -> increases fraud risk (SHAP: +0.430)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.426)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.345)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.207)\n\n--- Relevant Policies ---\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.0461108044724045,
+    "lgbm_fraud_prob": 0.07685134078734084,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.8971976324654095,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 174.0,
+        "shap_value": 0.4300764326307484,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.426203810511385,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3451146638304716,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.20664558464638794,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.09
+  },
+  {
+    "return_id": "RET_0000376",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.254 (LightGBM: 0.423, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.25366045840114093,
+    "lgbm_fraud_prob": 0.4227674306685682,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6666666865348816,
+        "shap_value": 0.9017410168548305,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5565324192499037,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 302.0,
+        "shap_value": 0.4083349215769948,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 4.0,
+        "shap_value": 0.23752067107966615,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 17.0,
+        "shap_value": -0.1073009323378899,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0008881",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.073 (LightGBM: 0.121, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.922)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.376)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.212)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.212)\n  \u2022 account_age_days: 225.000 -> increases fraud risk (SHAP: +0.204)\n\n--- Relevant Policies ---\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.07251972216281549,
+    "lgbm_fraud_prob": 0.1208662036046925,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9223759064222943,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3759411992254441,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.21176566095014074,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.21161029851997928,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 225.0,
+        "shap_value": 0.20371372658085637,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0002376",
+    "ground_truth": "fraud",
+    "fraud_type": "empty_box",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.272 (LightGBM: 0.453, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.27174558086305,
+    "lgbm_fraud_prob": 0.45290930143841673,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.8592950717260824,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.6341996167134603,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 248.0,
+        "shap_value": 0.3547189083332941,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.2325667252206099,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 0.0,
+        "shap_value": 0.2017845150472063,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0009576",
+    "ground_truth": "fraud",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.381 (LightGBM: 0.635, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.38125908868894404,
+    "lgbm_fraud_prob": 0.6354318144815734,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6666666865348816,
+        "shap_value": 0.9209401122670355,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3737546745892899,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.23687789405655343,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 406.0,
+        "shap_value": 0.19908482165970115,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 0.20213854312896729,
+        "shap_value": -0.10702616314165384,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0009019",
+    "ground_truth": "fraud",
+    "fraud_type": "empty_box",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.071 (LightGBM: 0.118, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.930)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.469)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.377)\n  \u2022 order_value: 2238.600 -> increases fraud risk (SHAP: +0.101)\n  \u2022 days_since_delivered: 14.000 -> decreases fraud risk (SHAP: -0.083)\n\n--- Relevant Policies ---\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.07069244776751733,
+    "lgbm_fraud_prob": 0.11782074627919556,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9301427531463756,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.4685035465287732,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.37722236255550806,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value",
+        "value": 2238.60009765625,
+        "shap_value": 0.10095070258070682,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 14.0,
+        "shap_value": -0.0826217812362618,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0001620",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.376 (LightGBM: 0.510, Rules: 0.175). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.3762853907355344,
+    "lgbm_fraud_prob": 0.510183253565072,
+    "rule_score": 0.17543859649122806,
+    "rules_triggered": [
+      {
+        "rule_id": "R5",
+        "rule_name": "Repeated Damaged Claims",
+        "description": "User claims 'damaged' with 7 prior returns. Pattern of repeated damage claims is suspicious.",
+        "score": 10.0
+      }
+    ],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.699999988079071,
+        "shap_value": 1.01120671625306,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.45650610054216034,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 7.0,
+        "shap_value": 0.3296434933602621,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 2.0,
+        "shap_value": -0.07080186296097872,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 1.0,
+        "shap_value": -0.06597770939646005,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      },
+      {
+        "source": "16_part3_general_rules.md",
+        "section": "## Open Box Delivery"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0005537",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.038 (LightGBM: 0.063, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.026)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.551)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.411)\n  \u2022 account_age_days: 289.000 -> increases fraud risk (SHAP: +0.224)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.132)\n\n--- Relevant Policies ---\n  \u2022 06_category_books_sports_auto.md: # Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto A\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 04_category_medicine.md: ## Return Window",
+    "llm_called": false,
+    "combined_score": 0.037626500947295805,
+    "lgbm_fraud_prob": 0.06271083491215967,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0263966382079082,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5509445533833143,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.41117223065416486,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 289.0,
+        "shap_value": 0.22413028886333822,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.13199475329424765,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "04_category_medicine.md",
+        "section": "## Return Window"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0002725",
+    "ground_truth": "legitimate",
+    "fraud_type": "item_swap",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.398 (LightGBM: 0.546, Rules: 0.175). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.3975013579379627,
+    "lgbm_fraud_prob": 0.5455431989024525,
+    "rule_score": 0.17543859649122806,
+    "rules_triggered": [
+      {
+        "rule_id": "R5",
+        "rule_name": "Repeated Damaged Claims",
+        "description": "User claims 'damaged' with 9 prior returns. Pattern of repeated damage claims is suspicious.",
+        "score": 10.0
+      }
+    ],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6428571343421936,
+        "shap_value": 0.7764411603670399,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.34006796344559953,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 9.0,
+        "shap_value": 0.2298422011896516,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 0.6200392246246338,
+        "shap_value": -0.1296838610139358,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 14.0,
+        "shap_value": -0.1071242871342841,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0005040",
+    "ground_truth": "legitimate",
+    "fraud_type": "item_swap",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.182 (LightGBM: 0.304, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.942)\n  \u2022 account_age_days: 113.000 -> increases fraud risk (SHAP: +0.711)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.347)\n  \u2022 days_since_delivered: 1.000 -> increases fraud risk (SHAP: +0.287)\n  \u2022 discount_pct: 3.000 -> increases fraud risk (SHAP: +0.252)\n\n--- Relevant Policies ---\n  \u2022 06_category_books_sports_auto.md: # Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto A\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.18239128100989221,
+    "lgbm_fraud_prob": 0.3039854683498204,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9417911742282742,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 113.0,
+        "shap_value": 0.7113933273299871,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3471334091365654,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 1.0,
+        "shap_value": 0.286684364257147,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "discount_pct",
+        "value": 3.0,
+        "shap_value": 0.2515514887744106,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0009891",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.383 (LightGBM: 0.638, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.382602923127519,
+    "lgbm_fraud_prob": 0.637671538545865,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.3333333432674408,
+        "shap_value": 0.3461876099800481,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.28503903280423715,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.27397848768797756,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.23265982365129512,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 372.0,
+        "shap_value": 0.20464448197129556,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "12_no_questions_asked_policy.md",
+        "section": "## Return Window"
+      },
+      {
+        "source": "03_category_lifestyle.md",
+        "section": "## Return Window"
+      },
+      {
+        "source": "04_category_medicine.md",
+        "section": "## Return Window"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0004420",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.069 (LightGBM: 0.115, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.967)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.393)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.344)\n  \u2022 email_verified: 0.000 -> increases fraud risk (SHAP: +0.297)\n  \u2022 order_value: 1862.470 -> decreases fraud risk (SHAP: -0.106)\n\n--- Relevant Policies ---\n  \u2022 06_category_books_sports_auto.md: # Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto A\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.06912331029782873,
+    "lgbm_fraud_prob": 0.11520551716304789,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9673623715321076,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3932382753661253,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3441461208754201,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "email_verified",
+        "value": 0.0,
+        "shap_value": 0.2969925274444852,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "order_value",
+        "value": 1862.469970703125,
+        "shap_value": -0.10554968855635101,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0007758",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.473 (LightGBM: 0.789, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.47340220292435015,
+    "lgbm_fraud_prob": 0.7890036715405836,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.9275046830322975,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 218.0,
+        "shap_value": 0.4537610360082763,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.34615393983421566,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.21441327166962276,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_last_return",
+        "value": 16.0,
+        "shap_value": 0.14362460136443095,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0009908",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.177 (LightGBM: 0.295, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.831)\n  \u2022 shared_device_flag: 1.000 -> increases fraud risk (SHAP: +0.443)\n  \u2022 account_age_days: 238.000 -> increases fraud risk (SHAP: +0.414)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.411)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.396)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 04_warranty_vs_return_separation.md: ## Principle",
+    "llm_called": false,
+    "combined_score": 0.17697434152411035,
+    "lgbm_fraud_prob": 0.29495723587351724,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.830742523161439,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "shared_device_flag",
+        "value": 1.0,
+        "shap_value": 0.44335093395812525,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 238.0,
+        "shap_value": 0.41416992426717814,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.4114898388476498,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3956457673524277,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0008770",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.040 (LightGBM: 0.067, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.020)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.442)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.255)\n  \u2022 seller_customer_frequency: 0.181 -> decreases fraud risk (SHAP: -0.104)\n  \u2022 order_value: 1364.440 -> decreases fraud risk (SHAP: -0.095)\n\n--- Relevant Policies ---\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 14_refurbished_products.md: ## Return Window\n  \u2022 04_warranty_vs_return_separation.md: ## Principle",
+    "llm_called": false,
+    "combined_score": 0.0402961239225355,
+    "lgbm_fraud_prob": 0.06716020653755918,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0195145143028443,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.4424669656466521,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.25526782802546855,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "seller_customer_frequency",
+        "value": 0.1809999942779541,
+        "shap_value": -0.1037815772625566,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "order_value",
+        "value": 1364.43994140625,
+        "shap_value": -0.09541470999005248,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "14_refurbished_products.md",
+        "section": "## Return Window"
+      },
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0008154",
+    "ground_truth": "legitimate",
+    "fraud_type": "legitimate_defect",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.032 (LightGBM: 0.053, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.896)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.551)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.369)\n  \u2022 days_since_delivered: 1.000 -> increases fraud risk (SHAP: +0.170)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.157)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.03153340422525852,
+    "lgbm_fraud_prob": 0.052555673708764204,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.8958482895531981,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.550936876452778,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.3689617026322391,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 1.0,
+        "shap_value": 0.16953761154832056,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.15673568709872998,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0004053",
+    "ground_truth": "fraud",
+    "fraud_type": "seller_buyer_collusion",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.064 (LightGBM: 0.106, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.067)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.417)\n  \u2022 account_age_days: 200.000 -> increases fraud risk (SHAP: +0.330)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.307)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.242)\n\n--- Relevant Policies ---\n  \u2022 11_category_grocery.md: ## Applicable Categories and Windows\n  \u2022 15_part2_pickup_conditions.md: ## Refund Timing\n  \u2022 09_category_flagship_brand_service_centre.md: ## Return Window / Action",
+    "llm_called": false,
+    "combined_score": 0.06380468852800814,
+    "lgbm_fraud_prob": 0.10634114754668023,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.067397361905552,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.41708827862718917,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 200.0,
+        "shap_value": 0.3304540550909991,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.3070301115404487,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.24167248045207304,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0004840",
+    "ground_truth": "legitimate",
+    "fraud_type": "changed_mind",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.033 (LightGBM: 0.055, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -1.016)\n  \u2022 image_uploaded: 1.000 -> decreases fraud risk (SHAP: -0.484)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.397)\n  \u2022 account_age_days: 217.000 -> increases fraud risk (SHAP: +0.342)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.150)\n\n--- Relevant Policies ---\n  \u2022 08_category_standard_mobiles_electronics.md: # Returns Policy \u2014 Standard Mobiles, Electronics & Small Hom\n  \u2022 09_category_flagship_brand_service_centre.md: # Returns Policy \u2014 Flagship Mobile, Electronics & Appliance \n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref",
+    "llm_called": false,
+    "combined_score": 0.03288892542790854,
+    "lgbm_fraud_prob": 0.0548148757131809,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -1.0156397186538,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.48386525630762245,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.39692413940032384,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 217.0,
+        "shap_value": 0.34171625878244866,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.14974299019889567,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "08_category_standard_mobiles_electronics.md",
+        "section": "# Returns Policy \u2014 Standard Mobiles, Electronics & Small Home Appliances"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "# Returns Policy \u2014 Flagship Mobile, Electronics & Appliance Brands (Service Cent"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0009466",
+    "ground_truth": "fraud",
+    "fraud_type": "item_swap",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.492 (LightGBM: 0.820, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.4921132625789678,
+    "lgbm_fraud_prob": 0.8201887709649464,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 1.1229920485953213,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 100.0,
+        "shap_value": 0.46585601154582984,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.32034159586415767,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.29201304538759487,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "email_verified",
+        "value": 0.0,
+        "shap_value": 0.2581516251521047,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0006364",
+    "ground_truth": "fraud",
+    "fraud_type": "item_swap",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.428 (LightGBM: 0.713, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.4275844361612188,
+    "lgbm_fraud_prob": 0.7126407269353646,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.8734329754753212,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.45683383291751045,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 2.0,
+        "shap_value": 0.2925802665322527,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 775.0,
+        "shap_value": -0.17733424070162812,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "return_frequency_score",
+        "value": 1.2999999523162842,
+        "shap_value": 0.1554720824763562,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "06_category_books_sports_auto.md",
+        "section": "# Returns Policy \u2014 Books, Sports & Fitness Equipment, Auto Accessories"
+      },
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "14_refurbished_products.md",
+        "section": "## Return Window"
+      }
+    ],
+    "elapsed_seconds": 0.08
+  },
+  {
+    "return_id": "RET_0001120",
+    "ground_truth": "legitimate",
+    "fraud_type": "wardrober",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.358 (LightGBM: 0.597, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.3582808799082853,
+    "lgbm_fraud_prob": 0.5971347998471421,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.5267130019012932,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 220.0,
+        "shap_value": 0.4333994211269656,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "reason_category",
+        "value": 0.0,
+        "shap_value": 0.3591487532722299,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.3333333432674408,
+        "shap_value": 0.31706822057701317,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.2642929585553087,
+        "direction": "increases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "09_category_flagship_brand_service_centre.md",
+        "section": "## Return Window / Action"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0006192",
+    "ground_truth": "legitimate",
+    "fraud_type": "item_swap",
+    "verdict": "Auto-Approve",
+    "confidence": "High",
+    "reasoning": "Combined Risk Score: 0.097 (LightGBM: 0.162, Rules: 0.000)\n\n--- Key Evidence (SHAP) ---\n  \u2022 return_to_order_ratio: 0.000 -> decreases fraud risk (SHAP: -0.995)\n  \u2022 image_uploaded: 0.000 -> increases fraud risk (SHAP: +0.533)\n  \u2022 total_returns_at_time: 0.000 -> decreases fraud risk (SHAP: -0.480)\n  \u2022 shared_device_flag: 1.000 -> increases fraud risk (SHAP: +0.310)\n  \u2022 user_avg_order_value: nan -> decreases fraud risk (SHAP: -0.223)\n\n--- Relevant Policies ---\n  \u2022 02_high_value_order_verification.md: ## Applicability\n  \u2022 02_category_furniture_home.md: - If a defect is determined within the Returns Window, a ref\n  \u2022 16_part3_general_rules.md: ## Open Box Delivery",
+    "llm_called": false,
+    "combined_score": 0.09701469535749455,
+    "lgbm_fraud_prob": 0.16169115892915759,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.0,
+        "shap_value": -0.9951774890840603,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.5328434089018406,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 0.0,
+        "shap_value": -0.47972567838952646,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "shared_device_flag",
+        "value": 1.0,
+        "shap_value": 0.31025821774841483,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "user_avg_order_value",
+        "value": NaN,
+        "shap_value": -0.2231526193978044,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "02_high_value_order_verification.md",
+        "section": "## Applicability"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      },
+      {
+        "source": "16_part3_general_rules.md",
+        "section": "## Open Box Delivery"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0006775",
+    "ground_truth": "legitimate",
+    "fraud_type": "seller_buyer_collusion",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.220 (LightGBM: 0.251, Rules: 0.175). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.2204781620434525,
+    "lgbm_fraud_prob": 0.2505045390782688,
+    "rule_score": 0.17543859649122806,
+    "rules_triggered": [
+      {
+        "rule_id": "R5",
+        "rule_name": "Repeated Damaged Claims",
+        "description": "User claims 'damaged' with 3 prior returns. Pattern of repeated damage claims is suspicious.",
+        "score": 10.0
+      }
+    ],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.6000000238418579,
+        "shap_value": 0.8441121450859547,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 1.0,
+        "shap_value": -0.631245970187494,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 3.0,
+        "shap_value": 0.21089746026691603,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 947.0,
+        "shap_value": -0.2076467992196438,
+        "direction": "decreases fraud risk"
+      },
+      {
+        "feature": "order_value_ratio",
+        "value": 0.3626720607280731,
+        "shap_value": -0.11928775219228054,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "04_warranty_vs_return_separation.md",
+        "section": "## Principle"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  },
+  {
+    "return_id": "RET_0005910",
+    "ground_truth": "fraud",
+    "fraud_type": "serial_returner",
+    "verdict": "Escalate",
+    "confidence": "Low",
+    "reasoning": "Combined score: 0.453 (LightGBM: 0.756, Rules: 0.000). No GEMINI_API_KEY \u2014 defaulting to Escalate.",
+    "llm_called": false,
+    "combined_score": 0.4534297060398032,
+    "lgbm_fraud_prob": 0.7557161767330054,
+    "rule_score": 0.0,
+    "rules_triggered": [],
+    "top_shap": [
+      {
+        "feature": "return_to_order_ratio",
+        "value": 0.5,
+        "shap_value": 0.9145308126521132,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "account_age_days",
+        "value": 193.0,
+        "shap_value": 0.5850745685022383,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "image_uploaded",
+        "value": 0.0,
+        "shap_value": 0.364036851282635,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "total_returns_at_time",
+        "value": 1.0,
+        "shap_value": 0.2557719781395286,
+        "direction": "increases fraud risk"
+      },
+      {
+        "feature": "days_since_delivered",
+        "value": 14.0,
+        "shap_value": -0.12241441910922612,
+        "direction": "decreases fraud risk"
+      }
+    ],
+    "rag_policies": [
+      {
+        "source": "11_category_grocery.md",
+        "section": "## Applicable Categories and Windows"
+      },
+      {
+        "source": "15_part2_pickup_conditions.md",
+        "section": "## Refund Timing"
+      },
+      {
+        "source": "02_category_furniture_home.md",
+        "section": "- If a defect is determined within the Returns Window, a refund/replacement of t"
+      }
+    ],
+    "elapsed_seconds": 0.07
+  }
+]
